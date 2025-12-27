@@ -1,7 +1,7 @@
 # frontend/Dockerfile
 
 # Build step
-FROM node:18-alpine as builder
+FROM node:18-alpine AS builder
 WORKDIR /app
 
 COPY package.json package-lock.json ./
