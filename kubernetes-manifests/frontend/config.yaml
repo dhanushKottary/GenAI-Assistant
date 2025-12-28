@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: genai-frontend-config
+  namespace: genai
+data:
+  NEXT_PUBLIC_API_BASE_URL: "/api"
