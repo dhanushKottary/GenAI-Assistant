@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: genai-frontend-service
+  namespace: genai
+spec:
+  selector:
+    app: genai-frontend
+  ports:
+    - port: 3000
+      targetPort: 3000

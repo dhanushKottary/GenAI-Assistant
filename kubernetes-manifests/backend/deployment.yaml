@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genai-backend
+  namespace: genai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: genai-backend
+  template:
+    metadata:
+      labels:
+        app: genai-backend
+    spec:
+      containers:
+      - name: genai-backend
+        image: dhaprako/genai-backend:v1
+        ports:
+        - containerPort: 8085
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: genai-backend-secret
+              key: GEMINI_API_KEY
